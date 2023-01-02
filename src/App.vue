@@ -10,11 +10,16 @@ import AppHeader from "@/components/app/AppHeader.vue";
 </template>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Hahmlet:wght@300;400&display=swap');
+
+
 #app {
     /* IE and Edge */
     -ms-overflow-style: none;
     /* Firefox */
     scrollbar-width: none;
+
+    font-family: "Hahmlet";
 }
 
 #app::-webkit-scrollbar {
