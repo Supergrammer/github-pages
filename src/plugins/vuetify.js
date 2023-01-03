@@ -14,7 +14,7 @@ const vuetify = createVuetify({
     icons: {
         defaultSet: "fa",
         sets: { fa },
-    }
+    },
 });
 
 export default vuetify;

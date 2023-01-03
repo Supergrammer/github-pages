@@ -1,9 +1,9 @@
 <script setup>
-
+import AppHeaderBarToggleThemeButton from "@/components/app/appHeader/AppHeaderBarToggleThemeButton.vue";
 </script>
 
 <template>
-    <div class="pa-1 d-flex align-center">
+    <v-card class="pa-1 d-flex align-center">
         <v-btn icon flat>
             <v-icon icon="fas fa-bars" />
         </v-btn>
@@ -18,10 +18,12 @@
             <v-icon icon="fas fa-magnifying-glass" />
         </v-btn>
 
+        <app-header-bar-toggle-theme-button />
+
         <v-btn icon flat>
             <v-icon icon="fas fa-ellipsis-vertical" />
         </v-btn>
-    </div>
+    </v-card>
 </template>
 
 <style scoped>
