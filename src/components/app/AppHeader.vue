@@ -1,47 +1,33 @@
 <script setup>
-import { ref } from "vue";
-
-import AppHeaderBar from "@/components/app/appHeader/AppHeaderBar.vue"
-
-const extended = ref(true);
-
-const click = function () {
-    extended.value = false;
-    console.log(extended)
-}
+import AppHeaderToggleThemeButton from "@/components/app/appHeader/AppHeaderToggleThemeButton.vue";
 </script>
 
 <template>
-    <v-card :height="extended ? '100vh' : 56" :rounded="0" class="app-header">
-        <app-header-bar @close="click" />
-        <div class="img-container">
-            <img src="@/assets/images/appheader.jpg" />
-        </div>
+	<v-app-bar class="app-header">
+		<v-btn icon="fas fa-bars" class="mr-3" />
+		<div
+			v-text="'테스트 페이지'"
+			class="app-header-title"
+			@click="$router.push({ name: 'main' })"
+		/>
 
+		<v-spacer />
 
-
-
-    </v-card>
+		<AppHeaderToggleThemeButton />
+		<v-btn icon="fas fa-magnifying-glass" />
+		<v-btn icon="fas fa-ellipsis-vertical" />
+	</v-app-bar>
 </template>
 
 <style scoped>
 .app-header {
-    position: fixed;
-    width: 100vw;
-
-    transition: height 1s cubic-bezier(0.75, 0, 0.25, 1);
-    z-index: 1;
+	z-index: 1;
 }
 
-.img-container {
-    text-align: center;
+.app-header-title {
+	cursor: pointer;
 
-    margin-left: -100%;
-    margin-right: -100%;
-}
-
-.img-container>img {
-    opacity: 0.5;
-    
+	font-size: 25px;
+	font-weight: bold;
 }
 </style>
