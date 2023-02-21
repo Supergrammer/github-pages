@@ -1,10 +1,14 @@
 <script setup>
-import AppHeaderToggleThemeButton from "@/components/app/appHeader/AppHeaderToggleThemeButton.vue";
+import { inject } from "vue";
+
+import AppHeaderToggleThemeSwitch from "./appHeader/AppHeaderToggleThemeSwitch.vue";
+
+const drawer = inject("drawer");
 </script>
 
 <template>
-	<v-app-bar class="app-header">
-		<v-btn icon="fas fa-bars" class="mr-3" />
+	<v-app-bar :elevation="7" class="app-header">
+		<v-btn icon="fas fa-bars" class="mr-3" @click="drawer = !drawer" />
 		<div
 			v-text="'테스트 페이지'"
 			class="app-header-title"
@@ -13,9 +17,8 @@ import AppHeaderToggleThemeButton from "@/components/app/appHeader/AppHeaderTogg
 
 		<v-spacer />
 
-		<AppHeaderToggleThemeButton />
+		<AppHeaderToggleThemeSwitch />
 		<v-btn icon="fas fa-magnifying-glass" />
-		<v-btn icon="fas fa-ellipsis-vertical" />
 	</v-app-bar>
 </template>
 
