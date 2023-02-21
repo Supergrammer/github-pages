@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 
 import BlogPage from "@/components/pages/BlogPage.vue";
+import ResumePage from "@/components/pages/ResumePage.vue";
 import ErrorPage from "@/components/pages/ErrorPage.vue";
 
 const routes = [
@@ -18,7 +19,7 @@ const routes = [
 	{
 		path: "/resume",
 		name: "resume",
-		component: null,
+		component: ResumePage,
 	},
 	{
 		path: "/:pathMatch(.*)*",
@@ -33,7 +34,7 @@ const router = createRouter({
 });
 
 router.beforeEach((to, from, next) => {
-	next(!to.redirectedFrom && to.name === "not-found" ? { path: to.path } : null);
+	next(!to.redirectedFrom && to.name === "error" ? { path: to.path } : null);
 });
 
 export default router;
