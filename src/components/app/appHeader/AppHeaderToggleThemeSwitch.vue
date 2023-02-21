@@ -1,13 +1,11 @@
 <script setup>
-import { computed, ref } from "vue";
-import { useTheme } from "vuetify";
+import { computed, inject } from "vue";
 
-const theme = useTheme();
-const currentTheme = ref(theme.global.name);
+const theme = inject("theme");
 
 const themeSwitch = computed({
-	get: () => currentTheme.value === "dark",
-	set: value => (currentTheme.value = value ? "dark" : "light"),
+	get: () => theme.value === "dark",
+	set: () => (theme.value = theme.value === "dark" ? "light" : "dark"),
 });
 </script>
 
