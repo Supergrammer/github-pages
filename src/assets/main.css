@@ -1,17 +1,14 @@
-@import url("https://fonts.googleapis.com/css2?family=Hahmlet:wght@300;400&display=swap");
+/* @import "./base.css";
 
 #app {
-	/* IE and Edge */
-	-ms-overflow-style: none;
-	/* Firefox */
-	scrollbar-width: none;
+	max-width: 1280px;
+	margin: 0 auto;
+	padding: 2rem;
 
-	font-family: "Hahmlet";
+	font-weight: normal;
 }
 
-/* @import "@/assets/base.css"; */
-
-/* a,
+a,
 .green {
 	text-decoration: none;
 	color: hsla(160, 100%, 37%, 1);
